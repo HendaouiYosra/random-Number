@@ -24,11 +24,13 @@
 
         
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">      
-        <script src="/js/script.js" ></script>
+        <script src="/TopicListing-1.0.0/js/script.js" ></script>
+        <script src="/TopicListing-1.0.0/js/donnes.js" ></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     </head>
-    
+ 
+
     <body id="top" >
 
         <main>
@@ -40,35 +42,11 @@
                         <span >Random Game</span>
                     </a>
 
-                    <div class="d-lg-none ms-auto me-4">
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                    </div>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">play </a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">score</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">How</a>
-                            </li>
-
-                           
-
-    
-                        </ul>
-
-                        <div class="d-none d-lg-block">
+                        <div class="d-none d-lg-flex" style="display: flex;">
+                        <?php session_start(); echo'<h6 style="margin-right:20px;">'. $_SESSION['username'] .' </h6>'; ?>
                             <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                            
                         </div>
                     </div>
                 </div>
@@ -79,10 +57,15 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-8 col-12 mx-auto">
+                        <div class="col-lg-8 col-12 mx-auto ">
                             <h1 class="text-white text-center" data-aos="fade-up">Guess. Try. Enjoy</h1>
 
                             <h6 class="text-center">try to find out the number</h6>
+                            <div class="text-center"> <!-- Centering container -->
+        <img src="images/trophy.png" alt="" style="width: 80px; height:auto;" class="center-image">
+    </div>
+
+                            <?php  echo'<h1 class="text-white text-center" data-aos="fade-up">'. $_SESSION['score'] .' </h1>'; ?>
                             <div class="row col-lg-10 col-12 mx-auto">
                                 <div class="col">
                                     <button type="reset"  id="custom-button" onclick="initialisation()">new game</button>

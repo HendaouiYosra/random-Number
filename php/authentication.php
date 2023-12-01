@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function authenticateUser($username, $password) {
     $connexion = mysqli_connect('localhost', 'root', '', 'randomgame');
 
@@ -9,7 +11,12 @@ function authenticateUser($username, $password) {
 
     // Check if there's a matching user
     if (mysqli_num_rows($result) > 0) {
-        header("Location: /TopicListing-1.0.0/gamechoice.html"); 
+        $user = mysqli_fetch_assoc($result);
+
+        // Store username and score in session
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['score'] = $user['score'];
+        
         return true;
     } else {
         // No matching user found, authentication failed

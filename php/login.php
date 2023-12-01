@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['userName']) && isset($_POST['password'])) {
     require_once 'authentication.php'; // Include file containing login authentication logic
     
@@ -14,9 +15,13 @@ if (isset($_POST['userName']) && isset($_POST['password'])) {
     }
 
     // Check the authentication result
-    if ($isAuthenticated) {
-        header("Location: /TopicListing-1.0.0/gamechoice.html"); // Replace 'dashboard.php' with the desired destination
-        exit();
+    if ($isAuthenticated) { 
+       // Store username in session storage
+            
+      
+
+     header("Location: /TopicListing-1.0.0/gamechoice.html"); 
+       exit();
         
     } else {
         echo "Incorrect username or password.";

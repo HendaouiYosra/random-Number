@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <script src="js/bdd.js"></script>
+    
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -56,7 +56,7 @@
                     <input type="password" name="password" id="pwd" placeholder="Password">
                 </div>
                 
-                <button class="btn mt-3" onclick="verifyLogin(document.getElementById('userName').value,document.getElementById('pwd').value)" >Login</button>
+                <button class="btn mt-3" type="submit" >Login</button>
             </form>
             <div class="text-center fs-6">
                 <a href="#">Forget password?</a> or <a href="Signup.php">Sign up</a>
@@ -66,5 +66,6 @@
        
      </div>
     </div>
+  
   </body>
 </html>
