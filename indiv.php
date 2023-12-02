@@ -78,7 +78,7 @@
                                     <button type="submit" id="custom-button"  onclick="affiche()">Answer</button>
                                 </div>
                                 <div class="col">
-                                    <button type="submit"  id="custom-button" onclick="window.close()" >Exit</button>
+                                    <button type="submit"  id="custom-button" onclick="closeWindow()" >Exit</button>
                                 </div>
                             </div>
                             
@@ -86,7 +86,7 @@
                             <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search" id="myForm">
                                 <div class="input-group input-group-lg">
                                     <input name="keyword" type="search" class="form-control" id="prop" placeholder="number" aria-label="Search">
-                                    <button type="submit" class="form-control">Check</button>
+                                    <button type="submit" id="check" class="form-control">Check</button>
                                 </div>
                             </form>
                             
@@ -171,6 +171,7 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
+        
  
 <script>AOS.init()</script>
     </body>
