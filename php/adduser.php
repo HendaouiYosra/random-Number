@@ -1,5 +1,5 @@
 <?php
-$i = 0; 
+
 function signup($username, $email, $password) {
     $connexion = mysqli_connect('localhost', 'root', '', 'randomgame');
 

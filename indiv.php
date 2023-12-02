@@ -22,10 +22,14 @@
 
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-        
+        <script>  <?php session_start(); ?>
+          var id = parseInt("<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : '0'; ?>");
+
+  var score = parseInt("<?php echo isset($_SESSION['score']) ? $_SESSION['score'] : '0'; ?>");
+  var username = "<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>";
+</script>
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">      
         <script src="/TopicListing-1.0.0/js/script.js" ></script>
-        <script src="/TopicListing-1.0.0/js/donnes.js" ></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     </head>
@@ -44,7 +48,7 @@
 
 
                         <div class="d-none d-lg-flex" style="display: flex;">
-                        <?php session_start(); echo'<h6 style="margin-right:20px;">'. $_SESSION['username'] .' </h6>'; ?>
+                        <?php  echo'<h6 style="margin-right:20px;">'. $_SESSION['username'] .' </h6>'; ?>
                             <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
                             
                         </div>
@@ -65,7 +69,7 @@
         <img src="images/trophy.png" alt="" style="width: 80px; height:auto;" class="center-image">
     </div>
 
-                            <?php  echo'<h1 class="text-white text-center" data-aos="fade-up">'. $_SESSION['score'] .' </h1>'; ?>
+                            <?php  echo'<h1 id="scoreDisplay" class="text-white text-center" data-aos="fade-up">'. $_SESSION['score'] .' </h1>'; ?>
                             <div class="row col-lg-10 col-12 mx-auto">
                                 <div class="col">
                                     <button type="reset"  id="custom-button" onclick="initialisation()">new game</button>
@@ -100,7 +104,7 @@
                     
                         <div class="d-flex justify-content-center align-items-center">
                             <table class="table-output">
-                              
+                        
                                     <td><i> Attempt N°:</i></td><td><input type="text" class="output" name="essai" id="essaiInput" size="30"></td></tr><tr><td>
                                     <i>Message:</i></td><td><input type="text" class="output" name="msg" id="msgInput" size="30"></td></tr><tr><td>
                                     <i>Answer:</i></td><td><input type="text" class="output" name="rep" size="30" id="rep"></td></tr>
@@ -114,6 +118,7 @@
                    <thead><tr>
                         <th>Attempt </th>
                         <th>Value </th>
+                        <th>Message </th>
                     </tr>
                 </thead> 
                     <tbody id="historique">

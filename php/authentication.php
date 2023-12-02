@@ -16,7 +16,7 @@ function authenticateUser($username, $password) {
         // Store username and score in session
         $_SESSION['username'] = $user['username'];
         $_SESSION['score'] = $user['score'];
-        
+        $_SESSION['id'] = $user['id'];
         return true;
     } else {
         // No matching user found, authentication failed
